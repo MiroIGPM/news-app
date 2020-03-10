@@ -11,24 +11,18 @@ import Pagination from './Pagination'
             <Consumer>
                {value => {
                    const { news_list, heading, currentPage, postsPerPage, dispatch } = value;
-                
-
                     const indexOfLastPost = currentPage * postsPerPage;
                     const indexOfFirstPost = indexOfLastPost - postsPerPage;
                     const currentPosts = news_list.slice(indexOfFirstPost , indexOfLastPost, );
 
-                    console.log(currentPosts)
-
                     const paginate = (pageNumber) =>{
-                        console.log(pageNumber)
+                        
                         dispatch({
                             type: 'CHANGE_PAGE',
                             payload: pageNumber
                         })
                         
-                    }
-                    
-                    
+                    }                    
                    if(news_list === undefined || news_list.length === 0){
                        return <Spinner />
                    } else{

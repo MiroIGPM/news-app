@@ -35,7 +35,6 @@ export class Provider extends Component {
         dispatch: action => this.setState(state => reducer(state, action)),
         currentPage: 1,
         postsPerPage: 5
-
     }
 
     componentDidMount(){

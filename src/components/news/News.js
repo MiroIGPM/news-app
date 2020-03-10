@@ -13,11 +13,14 @@ import Pagination from './Pagination'
                    const { news_list, heading, currentPage, postsPerPage, dispatch } = value;
                 
 
-                    const indexOfLastPost = currentPage + postsPerPage;
+                    const indexOfLastPost = currentPage * postsPerPage;
                     const indexOfFirstPost = indexOfLastPost - postsPerPage;
-                    const currentPosts = news_list.slice(indexOfFirstPost - 1, indexOfLastPost - 1);
+                    const currentPosts = news_list.slice(indexOfFirstPost , indexOfLastPost, );
+
+                    console.log(currentPosts)
 
                     const paginate = (pageNumber) =>{
+                        console.log(pageNumber)
                         dispatch({
                             type: 'CHANGE_PAGE',
                             payload: pageNumber
